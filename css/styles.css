@@ -1,0 +1,951 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+/*Container*/
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.seccions {
+    margin: 100px auto;
+    scroll-margin-top: 12ex;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+/*Nav*/
+.nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    transition: all 0.5s ease;
+    z-index: 5;
+}
+
+.logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 35px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    list-style: none;
+    margin: 10px;
+}
+
+.menu li a {
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.menu li a:hover {
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+}
+
+/*Menu-btn*/
+.menu-btn {
+    color: white;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+/*Nav Active*/
+.nav.active {
+    background-color: white;
+    padding: 15px;
+}
+
+.nav.active .logo,
+.nav.active .menu a,
+.nav.active .menu-btn i {
+    color: black;
+}
+
+.nav.active a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/*Logo Animado*/
+main {
+    width: 90%;
+    margin: auto;
+    max-width: 800px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.logotipo {
+    padding: 10px;
+    border: 5px solid white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.texto-animado {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.logotipo .subtitulo {
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: 12px 20px;
+    transition: all 0.5s ease;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logotipo:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logotipo:hover .subtitulo {
+    color: white;
+    background-color: #9CAEA9;
+}
+
+.texto-animado {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.texto-animado>div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.texto-animado>div.animacion {
+    transform: translateY(-100px);
+}
+
+.texto-animado>div span {
+    font-size: 100px;
+    font-weight: normal;
+    line-height: 100px;
+}
+
+.texto-animado .segunda-linea {
+    position: absolute;
+    top: 100px;
+}
+
+
+/*About Me*/
+.aboutme {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #293132;
+    border-radius: 20px;
+}
+
+.cont-about {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme .cont-about .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme .cont-about .image img {
+    max-width: 90%;
+    border-radius: 10px;
+}
+
+.cont-about .presentacion {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    color: white;
+    font-size: 20px;
+}
+
+.cont-about .presentacion h1 {
+    text-align: center;
+}
+
+/*Map*/
+.cont-maps {
+    margin: 30px;
+    display: grid;
+    grid-template-areas:
+        'title title'
+        'map map';
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.maps-title {
+    grid-area: title;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 2px gray;
+}
+
+.map {
+    grid-area: map;
+    max-width: 100%;
+}
+
+/*Skills*/
+.skills {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 5px dashed black;
+}
+
+.cont-skills {
+    margin: 30px;
+    display: grid;
+    grid-template-areas:
+        'title title title'
+        'skill1 skill2 skill3'
+        'skill4 skill5 skill6';
+    grid-auto-columns: auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-title {
+    text-align: center;
+    grid-area: title;
+    color: black;
+    font-size: 1.7rem;
+    margin-bottom: .4em;
+}
+
+:is(.skill1, .skill2, .skill3, .skill4, .skill5, .skill6) p {
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+:is(.skill1, .skill2, .skill3, .skill4, .skill5, .skill6):hover .skill-image {
+    filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+:is(.skill1, .skill2, .skill3, .skill4, .skill5, .skill6):hover p {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.skill-image {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    padding: 10px;
+    width: 100%;
+}
+
+.skill-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.skill1 {
+    grid-area: skill1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.skill2 {
+    grid-area: skill2;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.skill3 {
+    grid-area: skill3;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.skill4 {
+    grid-area: skill4;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.skill5 {
+    grid-area: skill5;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.skill6 {
+    grid-area: skill6;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+
+/*Portfolio*/
+.portfolio {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-folio {
+    margin: 20px;
+    display: grid;
+    grid-template-areas:
+        'title title title'
+        'work1 work2 work3';
+    gap: 20px;
+    grid-auto-columns: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.folio-title {
+    text-align: center;
+    grid-area: title;
+    font-size: 1.7rem;
+    text-shadow: 2px 2px 2px lightseagreen;
+}
+
+.folio1 {
+    grid-area: work1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.folio2 {
+    grid-area: work2;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.folio3 {
+    grid-area: work3;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+:is(.folio1, .folio2, .folio3) img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px blue;
+    transition: all 0.3s ease;
+}
+
+:is(.folio1, .folio2, .folio3):hover img {
+    filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+:is(.folio1, .folio2, .folio3) .descrip h2 {
+    color: #F9C80E;
+}
+
+:is(.folio1, .folio2, .folio3) .descrip {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    color: white;
+    transition: all 0.3s ease;
+    width: 90%;
+    padding: 5px;
+}
+
+:is(.folio1, .folio2, .folio3):hover .descrip {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+:is(.folio1, .folio2, .folio3) .descrip a {
+    padding: 5px;
+    background-color: #2B2D42;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 75px;
+    color: white;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+:is(.folio1, .folio2, .folio3) .descrip a:hover {
+    border: 3px solid #F9C80E;
+    background-color: white;
+    color: #2B2D42;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/*Contact*/
+
+.contact {
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #2B2D42;
+    border-radius: 20px;
+}
+
+.cont-contact {
+    margin: 20px;
+    display: grid;
+    grid-template-areas:
+        'title title'
+        'image form';
+    grid-auto-columns: 40%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title {
+    text-align: center;
+    grid-area: title;
+    color: white;
+    font-size: 1.7rem;
+    margin-bottom: .4em;
+    text-shadow: 0px 0px 7px #F8F32B;
+}
+
+.form-image {
+    grid-area: image;
+}
+
+.form-image img {
+    max-width: 100%;
+}
+
+.form {
+    grid-area: form;
+    background-color: #8D99AE;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 1rem;
+    padding: 1.5em 1em;
+}
+
+.form-container {
+    width: 100%;
+    display: grid;
+    grid-auto-columns: 100%;
+    gap: 1em;
+}
+
+.form-input,
+.form-btn {
+    font-family: 'Montserrat', sans-serif;
+    ;
+}
+
+.form-input {
+    font-size: 1rem;
+    padding: .8em 1em;
+    outline: none;
+    border: none;
+    border: 1px solid #bbb0b0;
+    border-radius: 0.5em;
+}
+
+.form-message {
+    resize: none;
+    padding: 1.8em 1em;
+    margin-bottom: 1.5em;
+}
+
+.form-btn {
+    background-color: #F8F32B;
+    color: black;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .7em 0;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-btn:hover {
+    box-shadow: 0px 0px 10px black;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/*Footer*/
+footer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 160px;
+    background-color: black;
+    color: white;
+}
+
+.endpage {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.endpage .rrss {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 30px;
+    transition: all 0.5s ease;
+    padding: 5px 10px;
+}
+
+.endpage .rrss a {
+    color: black;
+    padding: 3px 8px;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.endpage .rrss .facebook:hover {
+    color: white;
+    background: #3b5998;
+    border-radius: 50%;
+}
+
+.endpage .rrss .instagram:hover {
+    color: white;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 50%;
+}
+
+.endpage .rrss .whatsapp:hover {
+    color: white;
+    background: #25d366;
+    border-radius: 50%;
+}
+
+.endpage .rights {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.endpage .foot-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 1330px) {
+
+    .cont-folio {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title'
+            'work1'
+            'work2'
+            'work3';
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .cont-about .presentacion {
+        font-size: 18px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100vh;
+        background-color: #9CAEA9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        transform: translateX(-100%);
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    .menu.active {
+        transform: translateX(0);
+    }
+
+    .texto-animado>div span {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .texto-animado .segunda-linea {
+        top: 50px;
+    }
+
+    .texto-animado>div.animacion {
+        transform: translateY(-50px);
+    }
+
+    .logotipo .subtitulo {
+        font-size: 20px;
+    }
+
+    .cont-folio {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title'
+            'work1'
+            'work2'
+            'work3';
+    }
+
+    .endpage .rrss a {
+        font-size: 27px;
+    }
+
+}
+
+@media screen and (max-width: 890px) {
+
+    iframe {
+        height: 400px;
+    }
+
+    .cont-skills {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'skill1 skill2'
+            'skill3 skill4'
+            'skill5 skill6';
+    }
+    
+    :is(.skill1, .skill2, .skill3, .skill4, .skill5, .skill6) p {
+        font-size: 23px;
+    }
+
+    .cont-folio {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title'
+            'work1'
+            'work2'
+            'work3';
+    }
+
+    :is(.folio1, .folio2, .folio3) .descrip a {
+        padding: 2px;
+        width: 70px;
+    }
+
+    .form-image img {
+        display: none;
+    }
+
+    .cont-contact {
+        margin: 20px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    footer {
+        height: 145px;
+    }
+
+    .endpage {
+        gap: 5px;
+    }
+
+    .endpage .rrss a {
+        font-size: 25px;
+    }
+
+    .endpage .foot-name {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+
+    .cont-about {
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cont-about .presentacion {
+        font-size: 16px;
+    }
+
+    iframe {
+        height: 450px;
+    }
+
+    .cont-skills {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'skill1 skill2'
+            'skill3 skill4'
+            'skill5 skill6';
+    }
+
+    :is(.skill1, .skill2, .skill3, .skill4, .skill5, .skill6) p {
+        font-size: 21px;
+    }
+
+    .cont-folio {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title'
+            'work1'
+            'work2'
+            'work3';
+    }
+
+    :is(.folio1, .folio2, .folio3) .descrip a {
+        padding: 2px;
+        width: 70px;
+    }
+
+    .form-image img {
+        display: none;
+    }
+
+    .cont-contact {
+        margin: 20px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    footer {
+        height: 145px;
+    }
+
+    .endpage {
+        gap: 5px;
+    }
+
+    .endpage .rrss a {
+        font-size: 22px;
+    }
+
+    .endpage .foot-name {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .cont-about {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    iframe {
+        height: 300px;
+    }
+
+    .cont-skills {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title'
+            'skill1'
+            'skill2'
+            'skill3'
+            'skill4'
+            'skill5'
+            'skill6';
+    }
+
+    :is(.skill1, .skill2, .skill3, .skill4, .skill5, .skill6) p {
+        font-size: 18px;
+    }
+
+    .cont-folio {
+        margin: 20px;
+        display: grid;
+        grid-template-areas:
+            'title'
+            'work1'
+            'work2'
+            'work3';
+    }
+
+    :is(.folio1, .folio2, .folio3) .descrip a {
+        padding: 2px;
+        width: 68px;
+    }
+
+    .form-image img {
+        display: none;
+    }
+
+    .cont-contact {
+        margin: 20px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    footer {
+        height: 145px;
+    }
+
+    .endpage {
+        gap: 5px;
+    }
+
+    .endpage .rrss a {
+        font-size: 22px;
+    }
+
+    .endpage .foot-name {
+        font-size: 18px;
+    }
+
+}
