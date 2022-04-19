@@ -422,7 +422,7 @@ main {
     transition: all 0.3s ease;
 }
 
-:is(.folio1, .folio2, .folio3) .descrip h2 {
+:is(.folio1, .folio2, .folio3) .descrip h3 {
     color: #F9C80E;
 }
 
